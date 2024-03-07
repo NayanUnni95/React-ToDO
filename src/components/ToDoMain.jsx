@@ -7,16 +7,34 @@ function ToDoMain() {
         <div className="wrapper flex flex-align flex-content flex-wrap">
           <div className="header flex flex-align flex-content flex-dir">
             <h1>React ToDo List...</h1>
-            <div className="input-div">
-              <input type="text" />
-              <button>Submit</button>
+            <div className="input-div flex">
+              <input type="text" placeholder="Enter description" />
+              <button>
+                <i className="fa-solid fa-plus fa-xl"></i>
+              </button>
             </div>
           </div>
           <div className="footer">
             <div className="content flex flex-align">
               <input type="checkbox" />
-              <h4>Hello i am Nayan</h4>
-              <button>Delete</button>
+              <h4>Second year semester exam</h4>
+              <button>
+                <i className="fa-solid fa-trash fa-xl"></i>
+              </button>
+            </div>
+            <div className="content flex flex-align">
+              <input type="checkbox" />
+              <h4>Second year semester exam</h4>
+              <button>
+                <i className="fa-solid fa-trash fa-xl"></i>
+              </button>
+            </div>
+            <div className="content flex flex-align">
+              <input type="checkbox" />
+              <h4>Second year semester exam</h4>
+              <button>
+                <i className="fa-solid fa-trash fa-xl"></i>
+              </button>
             </div>
           </div>
         </div>
