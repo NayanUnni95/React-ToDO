@@ -1,52 +1,57 @@
-import './ToDoMain.css';
-import { useState } from 'react';
+import './ToDoMain.css'
+import { useState } from 'react'
 
 function ToDoMain() {
-  const [toDo, setToDo] = useState([]);
-  const [data, setData] = useState('');
+  const [toDo, setToDo] = useState([])
+  const [data, setData] = useState('')
   return (
     <>
-      <div className='container flex flex-align flex-content'>
-        <div className='wrapper flex flex-align flex-content flex-wrap'>
-          <div className='header flex flex-align flex-content flex-dir'>
+      <div className="container flex flex-align flex-content">
+        <div className="wrapper flex flex-align flex-content flex-wrap">
+          <div className="header flex flex-align flex-content flex-dir">
             <h1>React ToDo List...</h1>
-            <div className='input-div flex'>
+            <div className="input-div flex">
               <input
-                type='text'
+                type="text"
                 onChange={(e) => {
-                  setData(e.target.value);
+                  setData(e.target.value)
                 }}
-                placeholder='Enter description'
+                placeholder="Enter description"
               />
               <button
                 onClick={() => {
                   setToDo([
                     ...toDo,
-                    { des: data, id: Date.now(), check: false },
-                  ]);
-                }}>
-                <i className='fa-solid fa-plus fa-xl'></i>
+                    {
+                      des: data,
+                      id: Date.now(),
+                      check: false,
+                    },
+                  ])
+                }}
+              >
+                <i className="fa-solid fa-plus fa-xl"></i>
               </button>
             </div>
           </div>
-          <div className='footer'>
+          <div className="footer">
             {toDo.map((obj, index) => {
               return (
-                <div key={index} className='content flex flex-align'>
+                <div key={index} className="content flex flex-align">
                   <input
                     onClick={(e) => {
                       setToDo(
                         toDo.filter((index) => {
                           if (obj.id === index.id) {
-                            index.status = e.target.checked;
+                            index.status = e.target.checked
                           }
-                          return index;
+                          return index
                         })
-                      );
+                      )
                     }}
-                    type='checkbox'
+                    type="checkbox"
                   />
-                  <div className='content-data flex flex-align flex-content'>
+                  <div className="content-data flex flex-align flex-content">
                     <h4>{obj.des}</h4>
                   </div>
                   <button
@@ -54,21 +59,22 @@ function ToDoMain() {
                       setToDo(
                         toDo.filter((index) => {
                           if (obj.id != index.id) {
-                            return index;
+                            return index
                           }
                         })
-                      );
-                    }}>
-                    <i className='fa-solid fa-trash fa-xl'></i>
+                      )
+                    }}
+                  >
+                    <i className="fa-solid fa-trash fa-xl"></i>
                   </button>
                 </div>
-              );
+              )
             })}
           </div>
         </div>
       </div>
     </>
-  );
+  )
 }
 
-export default ToDoMain;
+export default ToDoMain
