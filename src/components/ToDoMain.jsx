@@ -1,9 +1,12 @@
-import './ToDoMain.css'
-import { useState } from 'react'
+import './ToDoMain.css';
+import { useState } from 'react';
 
 function ToDoMain() {
-  const [toDo, setToDo] = useState([])
-  const [data, setData] = useState('')
+  const [toDo, setToDo] = useState([]);
+  const [data, setData] = useState('');
+  const clearInput = () => {
+    setData('');
+  };
   return (
     <>
       <div className="container flex flex-align flex-content">
@@ -14,9 +17,10 @@ function ToDoMain() {
               <input
                 type="text"
                 onChange={(e) => {
-                  setData(e.target.value)
+                  setData(e.target.value);
                 }}
                 placeholder="Enter description"
+                value={data}
               />
               <button
                 onClick={() => {
@@ -27,7 +31,8 @@ function ToDoMain() {
                       id: Date.now(),
                       check: false,
                     },
-                  ])
+                  ]),
+                    clearInput();
                 }}
               >
                 <i className="fa-solid fa-plus fa-xl"></i>
@@ -43,11 +48,11 @@ function ToDoMain() {
                       setToDo(
                         toDo.filter((index) => {
                           if (obj.id === index.id) {
-                            index.status = e.target.checked
+                            index.status = e.target.checked;
                           }
-                          return index
+                          return index;
                         })
-                      )
+                      );
                     }}
                     type="checkbox"
                   />
@@ -59,22 +64,22 @@ function ToDoMain() {
                       setToDo(
                         toDo.filter((index) => {
                           if (obj.id != index.id) {
-                            return index
+                            return index;
                           }
                         })
-                      )
+                      );
                     }}
                   >
                     <i className="fa-solid fa-trash fa-xl"></i>
                   </button>
                 </div>
-              )
+              );
             })}
           </div>
         </div>
       </div>
     </>
-  )
+  );
 }
 
-export default ToDoMain
+export default ToDoMain;

@@ -138,4 +138,10 @@
   .container .wrapper .footer .content button {
     width: 2rem;
   }
+  .container .wrapper .header {
+    border-radius: 0;
+  }
+  .container .wrapper .footer {
+    border-radius: 0;
+  }
 }
