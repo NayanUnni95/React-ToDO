@@ -25,16 +25,17 @@
 .container .wrapper {
   width: 80%;
   height: 80%;
-  /* background-color: aquamarine; */
+  background-color: #c9c9c9;
+  border-radius: 1rem;
 }
 .container .wrapper .header {
   width: 100%;
   height: 25%;
-  background-color: rgb(65, 197, 214);
   border-radius: 1rem 1rem 0 0;
 }
 .container .wrapper .header h1 {
   margin-top: 1rem;
+  color: #7b7b7b;
   font-family: 'Josefin Sans', sans-serif;
 }
 .container .wrapper .header .input-div {
@@ -63,13 +64,12 @@
   cursor: pointer;
 }
 .container .wrapper .header .input-div button:hover {
-  background-color: rgb(47, 241, 47);
+  background-color: #49df49;
 }
 .container .wrapper .footer {
   width: 100%;
   height: 75%;
   padding: 1rem;
-  background-color: rgb(107, 224, 170);
   overflow: scroll;
   border-radius: 0 0 1rem 1rem;
 }
@@ -82,7 +82,13 @@
   margin: 0.7rem;
   border-radius: 1rem;
   justify-content: space-around;
-  background-color: rgb(133, 133, 133);
+  background: rgb(71, 149, 255);
+  background: linear-gradient(
+    102deg,
+    rgba(71, 149, 255, 1) 0%,
+    rgba(176, 79, 244, 1) 50%,
+    rgba(236, 15, 255, 1) 100%
+  );
   overflow: scroll;
   position: relative;
 }
@@ -101,7 +107,7 @@
   cursor: pointer;
 }
 .container .wrapper .footer .content button:hover {
-  background-color: red;
+  background-color: #f53535;
 }
 .container .wrapper .footer .content input {
   width: 1rem;
@@ -127,6 +133,7 @@
   .container .wrapper {
     width: 100%;
     height: 100vh;
+    border-radius: 0;
   }
   .container .wrapper .header .input-div input[type='text'] {
     width: 18rem;
