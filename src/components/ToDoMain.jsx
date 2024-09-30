@@ -24,15 +24,19 @@ function ToDoMain() {
               />
               <button
                 onClick={() => {
-                  setToDo([
-                    ...toDo,
-                    {
-                      des: data,
-                      id: Date.now(),
-                      check: false,
-                    },
-                  ]),
-                    clearInput();
+                  if (data && data.trim() != '') {
+                    setToDo([
+                      ...toDo,
+                      {
+                        des: data,
+                        id: Date.now(),
+                        check: false,
+                      },
+                    ]),
+                      clearInput();
+                  } else {
+                    alert('Empty Message...');
+                  }
                 }}
               >
                 <i className="fa-solid fa-plus fa-xl"></i>
